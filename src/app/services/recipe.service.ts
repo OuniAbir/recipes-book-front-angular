@@ -22,4 +22,8 @@ export class RecipeService {
 
     }
 
+    getAllRecipiesByCategory(currentCategoryId: number) : Observable<any>  {
+      console.log(`${this.baseUrl}/recipes/findByCategoryId?categoryId=${currentCategoryId}`);
+      return this.httpClient.get(`${this.baseUrl}/recipes/findByCategoryId?categoryId=${currentCategoryId}`) ;    }
+
 }
