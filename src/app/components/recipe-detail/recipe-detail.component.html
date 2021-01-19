@@ -1,0 +1,64 @@
+<div class="container-fluid tm-container-content tm-mt-60">
+  <div class="row mb-4">
+    <h2 class="col-12 tm-text-primary">{{recipe.name}}</h2>
+  </div>
+  <div class="row tm-mb-90">
+    <div class="col-xl-5 col-lg-7 col-md-6 col-sm-12">
+      <img src="{{recipe.imageUrl}}" alt="Image"  style="height: 600px; width: 600px">
+    </div>
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+      <div class="tm-bg-gray tm-video-details">
+
+        <div class="mb-4 d-flex flex-wrap">
+          <div class="mr-4 mb-2">
+            <span class="tm-text-gray-dark">Preparation Time : </span><span class="tm-text-primary"> {{recipe.preptime}}</span>
+          </div>
+          <div class="mr-4 mb-2">
+            <span class="tm-text-gray-dark">Cook Time: </span><span class="tm-text-primary">{{recipe.cooktime}}</span>
+          </div>
+          <div class="mr-4 mb-2">
+            <span class="tm-text-gray-dark">Serving Time: </span><span class="tm-text-primary">{{recipe.servings}}</span>
+          </div>
+          <div class="mr-4 mb-2">
+            <span class="tm-text-gray-dark"> Difficulty: </span><span class="tm-text-primary">{{recipe.difficulty}}</span>
+          </div>
+        </div>
+        <div class="mb-4">
+          <h3 class="tm-text-gray-dark mb-3">Instructions:</h3>
+          <p> {{recipe.instructions}} </p>
+        </div>
+        <div class="mb-4">
+          <h3 class="tm-text-gray-dark mb-3">Ingredients:</h3>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col" class="tm-text-gray-dark" >Quantity</th>
+                <th scope="col" class="tm-text-gray-dark" >Ingredient Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let ingredient of ingredients" >
+                <td>  <p> {{ingredient.amount}} </p></td>
+                <td>  <p> {{ingredient.description}}. </p></td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+        <div>
+          <h3 class="tm-text-gray-dark mb-3">Comments: </h3>
+          <p>{{recipe.comments}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-4">
+    <h2 class="col-12 tm-text-primary">
+      Leave a comment
+    </h2>
+    <h2 class="col-12 tm-text-primary">
+      <a routerLink="/recipe"  style="color: #009999;  " >Go back to all recipes  </a>
+    </h2>
+  </div>
+  <div class="row mb-3 tm-gallery">
+  </div> <!-- row -->
+</div> <!-- container-fluid, tm-container-content -->

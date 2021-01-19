@@ -8,8 +8,10 @@ import { RecipeService } from './services/recipe.service';
 import { SearchComponent } from './components/search/search.component';
 import { RecipeListComponent } from './components/recipe-list/recipe-list.component';
 import { Routes, RouterModule } from '@angular/router';
+import { RecipeDetailComponent } from './components/recipe-detail/recipe-detail.component';
 
 const routes: Routes = [
+  {path: 'recipe/:id', component : RecipeDetailComponent  },
   {path: 'category/:id' , component : RecipeListComponent },
   {path: 'catgeory' , component : RecipeListComponent },
   {path: 'recipes' , component : RecipeListComponent },
@@ -24,7 +26,8 @@ const routes: Routes = [
     AppComponent,
     CategoryMenuComponent,
     SearchComponent,
-    RecipeListComponent
+    RecipeListComponent,
+    RecipeDetailComponent
   ],
   imports: [
     BrowserModule,
