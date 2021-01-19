@@ -1,0 +1,26 @@
+<div class="container-fluid tm-container-content tm-mt-60">
+  <div class="row mb-4">
+      <h2 class="col-6 tm-text-primary">
+          Latest Photos
+      </h2>
+  </div>
+
+<div class="row ">
+       <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6 col-12 mb-5" *ngFor="let recipe of recipies" >
+        <!-- loop the collection of prroducts -->
+                <figure class="effect-ming tm-video-item" >
+                    <img src="{{recipe.imageUrl}}"   style="width: 100%; height: 250px"  class="img-responsive ">
+                    <figcaption class="d-flex align-items-center justify-content-center">
+                        <h2>Details</h2>
+                        <a href="#">View more</a>
+                    </figcaption>
+                </figure>
+                <div class="d-flex justify-content-between tm-text-gray">
+                  <span >{{ recipe.name}}</span>
+                  <span class="tm-text-gray-light"> Difficulty :  {{recipe.difficulty}}</span>
+                </div>
+        </div>
+
+
+</div>
+</div>
