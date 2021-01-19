@@ -13,6 +13,7 @@ const routes: Routes = [
   {path: 'category/:id' , component : RecipeListComponent },
   {path: 'catgeory' , component : RecipeListComponent },
   {path: 'recipes' , component : RecipeListComponent },
+  { path: 'search/:keyword', component: RecipeListComponent },
   { path : '' , component : RecipeListComponent},
   { path : '**' , component : RecipeListComponent},
 

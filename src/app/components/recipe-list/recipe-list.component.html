@@ -9,7 +9,7 @@
        <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6 col-12 mb-5" *ngFor="let recipe of recipies" >
         <!-- loop the collection of prroducts -->
                 <figure class="effect-ming tm-video-item" >
-                    <img src="{{recipe.imageUrl}}"   style="width: 100%; height: 250px"  class="img-responsive ">
+                    <img src="{{recipe.imageUrl}}"    class="img-responsive ">
                     <figcaption class="d-flex align-items-center justify-content-center">
                         <h2>Details</h2>
                         <a href="#">View more</a>
@@ -19,6 +19,9 @@
                   <span >{{ recipe.name}}</span>
                   <span class="tm-text-gray-light"> Difficulty :  {{recipe.difficulty}}</span>
                 </div>
+        </div>
+        <div *ngIf="recipies?.length == 0" class="alert alert-warning col-md-12" role="alert" >
+          We are sorry, no recipe found.
         </div>
 
 

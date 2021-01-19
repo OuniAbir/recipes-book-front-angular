@@ -26,4 +26,10 @@ export class RecipeService {
       console.log(`${this.baseUrl}/recipes/findByCategoryId?categoryId=${currentCategoryId}`);
       return this.httpClient.get(`${this.baseUrl}/recipes/findByCategoryId?categoryId=${currentCategoryId}`) ;    }
 
-}
+      getAllRecipiesByNameContaining(keyword : String) : Observable<any> {
+        console.log(`${this.baseUrl}/recipes/findBySearchName?name=${keyword}`);
+        return this.httpClient.get(`${this.baseUrl}/recipes/findBySearchName?name=${keyword}`);
+      }
+
+
+    }
