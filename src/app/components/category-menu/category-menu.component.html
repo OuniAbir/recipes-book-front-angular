@@ -3,17 +3,25 @@
   <div class="container-fluid">
       <a routerLink="/recipes" class="navbar-brand" href="#">
           <i class="fas fa-utensils mr-2"></i>
-            Recipe Book
+            RECIPES BOOK
       </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="fas fa-bars"></i>
-      </button>
+
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
-          <li class="nav-item"    *ngFor="let category of categories " >
-              <a routerLink="/category/{{category.id}}"   routerLinkActive="active-link" class="nav-link nav-link-1 active" aria-current="page" href="#"> {{category.name}} </a>
-          </li>
-      </ul>
+        <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+
+            <li class="nav-item"  > <a  class="nav-link nav-link-1 active"  href="#">Appetizer </a>  </li>
+            <li class="nav-item"  > <a  class="nav-link nav-link-1 active"  href="#">Main </a>  </li>
+            <li class="nav-item"  > <a  class="nav-link nav-link-1 active"  href="#">Dessert </a>  </li>
+
+            <!-- <li class="nav-item"    *ngFor="let category of categories " >
+                <a routerLink="/category/{{category.id}}"   routerLinkActive="active-link" class="nav-link nav-link-1 active" aria-current="page" href="#"> {{category.name}} </a>
+            </li> -->
+        </ul>
+        </div>
+      <div class="flex-grow-1 float-right">
+        <a routerLink="/sign-up" class="float-right signup mr-2">Sign up</a>
+        <a routerLink="/login" class="float-right login mr-2">Login</a>
       </div>
+
   </div>
 </nav>
