@@ -26,7 +26,16 @@
                                 Login
                             </button>
                             <span style="padding-left: 15px">New to Recipes Book ? <a routerLink="/sign-up">Sign up</a></span>
-                </span>
+                          </span>
+                            <!-- registraion success -->
+                            <div  class="login-failed" [ngStyle]="{'background-color': 'green'}"  *ngIf="registrationSuccessMessage.length > 0" >
+                              <p class="register-success-text">{{registrationSuccessMessage}}</p>
+                            </div>
+
+                            <!-- login failed  -->
+                            <div  class="login-failed" *ngIf="isError == true">
+                              <p  class="login-failed-text" > Login Failed. Please check your credentials and tray again</p>
+                            </div>
                     </form>
               </div>
           </div>

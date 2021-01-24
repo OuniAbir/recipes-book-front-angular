@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { LoginRequestPayload } from './login-request-payload';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +15,14 @@ export class LoginComponent implements OnInit {
   loginFormGroup : FormGroup ;
   loginRequestPayload : LoginRequestPayload ;
 
-  constructor(private AuthService  : AuthService) {
+  registrationSuccessMessage : string = '';
+  isError : boolean ;
+
+  constructor(private AuthService  : AuthService,
+    private activatedRoute : ActivatedRoute,
+    private router : Router,
+    private toastrService : ToastrService
+    ) {
     this.loginRequestPayload = { username : '', password : ''  }
 
   }
@@ -23,6 +32,17 @@ export class LoginComponent implements OnInit {
       username : new FormControl('', Validators.required) ,
       password : new FormControl ('', Validators.required)
     })
+
+    /* check if we come from signup page, if yes show a signup ssuccess message */
+    this.activatedRoute.queryParams.subscribe(
+      Param => {
+        if (Param.registered  !== undefined && Param.registered=='true' ) {
+          this.toastrService.success('Signup Successfull');
+          this.registrationSuccessMessage='Please Check your inbox for activation email then activate your account before you Login!';
+        }
+      }
+    )
+
   }
 
   login(){
@@ -36,8 +56,21 @@ export class LoginComponent implements OnInit {
     this.AuthService.login(this.loginRequestPayload).subscribe(
       data =>
       {
-        console.log(`login return : ${data}`);
+        /* login success -> we get true from authservice */
+        /* if true go to start page*/
+        if (data) {
+          console.log(`login return : ${data}`);
+          this.isError = false ;
+          /* Navigates to this absolute route path */
+          this.router.navigateByUrl('/');
+          this.toastrService.success('Login Successful');
+        }
+        /* login failed */
+        else {
 
+          this.isError=true;
+          this.toastrService.error('Login failed !');
+        }
       }
     ) ;
   }
