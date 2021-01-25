@@ -1,0 +1,27 @@
+<footer class="tm-bg-gray pt-5 pb-3 tm-text-gray tm-footer">
+  <div class="container-fluid tm-container-small">
+    <h1>Reviews</h1>
+
+    <div class=" tm-mt-60 comment">
+      <form [formGroup]="commentForm" (ngSubmit)="postComment()">
+        <div class="form-group">
+          <textarea class="form-control" [formControlName]="'text'" placeholder="Your Thoughts?"></textarea>
+        </div>
+        <button type="submit" class="login float-right">Comment</button>
+      </form>
+    </div>
+<!-- list of comment  -->
+          <div class="col-lg-6 col-md-12 col-12 px-5 "  *ngFor="let review of comments">
+            <hr >
+            <div class="mb-4">
+              <span class="tm-text-gray-dark">Posted by </span>
+              <span class="tm-text-primary">  {{review.userName}}   </span>
+              <span class="tm-text-gray-dark   "> on {{review.createdDate | date:'medium' }} </span>
+            </div>
+            <p>{{review.text}} </p>
+          </div>
+<!-- end list of comment  -->
+
+      </div>
+
+</footer>

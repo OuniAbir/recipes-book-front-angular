@@ -17,17 +17,20 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
 import { AuthService } from './services/auth.service';
 import { TokenInterceptorService } from "./services/token-interceptor.service";
+import { EditorModule } from '@tinymce/tinymce-angular';
+import { RecipeReviewComponent } from './components/recipe-review/recipe-review.component';
+import { CommentService } from './services/comment.service';
 
 const routes: Routes = [
-  {path :'sign-up', component : SignupComponent },
-  {path : 'login', component : LoginComponent },
-  {path: 'recipe/:id', component : RecipeDetailComponent  },
-  {path: 'category/:id' , component : RecipeListComponent },
-  {path: 'catgeory' , component : RecipeListComponent },
-  {path: 'recipes' , component : RecipeListComponent },
+  { path: 'sign-up', component: SignupComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'recipe/:id', component: RecipeDetailComponent },
+  { path: 'category/:id', component: RecipeListComponent },
+  { path: 'catgeory', component: RecipeListComponent },
+  { path: 'recipes', component: RecipeListComponent },
   { path: 'search/:keyword', component: RecipeListComponent },
-  { path : '' , component : RecipeListComponent},
-  { path : '**' , component : RecipeListComponent},
+  { path: '', component: RecipeListComponent },
+  { path: '**', component: RecipeListComponent },
 
 ]
 
@@ -39,8 +42,10 @@ const routes: Routes = [
     RecipeListComponent,
     RecipeDetailComponent,
     SignupComponent,
-    LoginComponent
-],
+    LoginComponent,
+    RecipeReviewComponent,
+
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -49,16 +54,16 @@ const routes: Routes = [
     FormsModule,
     NgxWebstorageModule.forRoot(),
     ToastrModule.forRoot(),
-    BrowserAnimationsModule
-
-
+    BrowserAnimationsModule,
+    EditorModule
   ],
   providers: [
     RecipeService,
     AuthService,
+    CommentService,
     {
       provide: HTTP_INTERCEPTORS,
-      useClass:TokenInterceptorService,
+      useClass: TokenInterceptorService,
       multi: true
     }
   ],
