@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgxWebstorageModule } from "ngx-webstorage";
 import { ToastrModule } from "ngx-toastr";
@@ -15,7 +15,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { RecipeDetailComponent } from './components/recipe-detail/recipe-detail.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
-
+import { AuthService } from './services/auth.service';
+import { TokenInterceptorService } from "./services/token-interceptor.service";
 
 const routes: Routes = [
   {path :'sign-up', component : SignupComponent },
@@ -52,7 +53,16 @@ const routes: Routes = [
 
 
   ],
-  providers: [RecipeService],
+  providers: [
+    RecipeService,
+    AuthService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass:TokenInterceptorService,
+      multi: true
+    }
+  ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

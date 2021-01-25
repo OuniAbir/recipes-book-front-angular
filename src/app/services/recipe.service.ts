@@ -17,25 +17,24 @@ export class RecipeService {
   }
 
   getAllRecipies(): Observable<any> {
-
-    console.log(`${this.baseUrl}/recipes`);
+    console.log(`${this.baseUrl}/recipes/`);
     return this.httpClient.get(`${this.baseUrl}/recipes/`);
 
   }
 
   getAllRecipiesByCategory(currentCategoryId: number): Observable<any> {
-    console.log(`${this.baseUrl}/recipes/findByCategoryId?categoryId=${currentCategoryId}`);
-    return this.httpClient.get(`${this.baseUrl}/recipes/findByCategoryId?categoryId=${currentCategoryId}`);
+    console.log(`${this.baseUrl}/recipes/by-category/${currentCategoryId}`);
+    return this.httpClient.get(`${this.baseUrl}/recipes/by-category/${currentCategoryId}`);
   }
 
   getAllRecipiesByNameContaining(keyword: String): Observable<any> {
-    console.log(`${this.baseUrl}/recipes/findBySearchName?name=${keyword}`);
-    return this.httpClient.get(`${this.baseUrl}/recipes/findBySearchName?name=${keyword}`);
+    console.log(`${this.baseUrl}/recipes/by-name/${keyword}`);
+    return this.httpClient.get(`${this.baseUrl}/recipes/by-name/${keyword}`);
   }
 
   getRecipeById(theRecipeId: number): Observable<any> {
-
-    return this.httpClient.get(`${this.baseUrl}/recipes/findRecipeById?recipeId=${theRecipeId}`);
+    console.log(`${this.baseUrl}/recipes/${theRecipeId}`);
+    return this.httpClient.get(`${this.baseUrl}/recipes/${theRecipeId}`);
   }
 
 }
