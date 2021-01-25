@@ -1,64 +1,88 @@
-<div class="container-fluid tm-container-content tm-mt-60">
-  <div class="row mb-4">
-    <h2 class="col-12 tm-text-primary">{{recipe.name}}</h2>
+<div class="container tm-mt-60 ">
+  <div class="row mb-5 ">
+    <h2 class="col-12 tm-text-primary">
+      {{recipe.name}}
+    </h2>
   </div>
   <div class="row tm-mb-90">
-    <div class="col-xl-5 col-lg-7 col-md-6 col-sm-12">
-      <img src="{{recipe.imageUrl}}" alt="Image"  style="height: 600px; width: 600px">
+    <div class="col-xl-6 col-lg-7 col-md-6 col-sm-12">
+      <img src="{{recipe.imageUrl}}" style="width: 400px; height: 300px;" alt="Image" >
     </div>
-    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+    <div class="col-xl-4 col-lg-5 col-md-6 col-sm-12">
       <div class="tm-bg-gray tm-video-details">
+        <p class="mb-4">
+          Source : <a href="{{recipe.source}}" class="tm-text-primary" target="_parent"
+            rel="sponsored">{{recipe.source}}</a>
+        </p>
+        <div class="d-flex flex-wrap">
+          <!-- recipe info -->
+          <div class="mr-4 mb-2">
+            <span class="tm-text-gray-dark"> Preptime : </span><span class="tm-text-primary"> {{recipe.preptime}}</span>
+          </div>
+          <div class="mr-4 mb-2">
+            <span class="tm-text-gray-dark">Cooktime : </span><span class="tm-text-primary"> {{recipe.cooktime}}</span>
+          </div>
+          <div class="mr-4 mb-2">
+            <span class="tm-text-gray-dark">Waittime : </span><span class="tm-text-primary"> {{recipe.waittime}}</span>
+          </div>
+          <div class="mr-4 mb-2">
+            <span class="tm-text-gray-dark">Servings : </span><span class="tm-text-primary"> {{recipe.servings}}</span>
+          </div>
+          <div class="mr-4 mb-2">
+            <span class="tm-text-gray-dark">Calories : </span><span class="tm-text-primary"> {{recipe.calories}}</span>
+          </div>
+          <div class="mr-4 mb-2">
+            <span class="tm-text-gray-dark">Fat : </span><span class="tm-text-primary"> {{recipe.fat}}</span>
+          </div>
+          <div class="mr-4 mb-2">
+            <span class="tm-text-gray-dark">Satfat : </span><span class="tm-text-primary"> {{recipe.satfat}}</span>
+          </div>
+          <div class="mr-4 mb-2">
+            <span class="tm-text-gray-dark">Carbs : </span><span class="tm-text-primary"> {{recipe.carbs}}</span>
+          </div>
+          <div class="mr-4 mb-2">
+            <span class="tm-text-gray-dark">Fiber : </span><span class="tm-text-primary"> {{recipe.fiber}}</span>
+          </div>
+          <div class="mr-4 mb-2">
+            <span class="tm-text-gray-dark">Sugar : </span><span class="tm-text-primary"> {{recipe.sugar}}</span>
+          </div>
+          <div class="mr-4 mb-2">
+            <span class="tm-text-gray-dark">Protein : </span><span class="tm-text-primary"> {{recipe.protein}}</span>
+          </div>
 
-        <div class="mb-4 d-flex flex-wrap">
-          <div class="mr-4 mb-2">
-            <span class="tm-text-gray-dark">Preparation Time : </span><span class="tm-text-primary"> {{recipe.preptime}}</span>
-          </div>
-          <div class="mr-4 mb-2">
-            <span class="tm-text-gray-dark">Cook Time: </span><span class="tm-text-primary">{{recipe.cooktime}}</span>
-          </div>
-          <div class="mr-4 mb-2">
-            <span class="tm-text-gray-dark">Serving Time: </span><span class="tm-text-primary">{{recipe.servings}}</span>
-          </div>
-          <div class="mr-4 mb-2">
-            <span class="tm-text-gray-dark"> Difficulty: </span><span class="tm-text-primary">{{recipe.difficulty}}</span>
-          </div>
         </div>
-        <div class="mb-4">
-          <h3 class="tm-text-gray-dark mb-3">Instructions:</h3>
-          <p> {{recipe.instructions}} </p>
-        </div>
-        <div class="mb-4">
-          <h3 class="tm-text-gray-dark mb-3">Ingredients:</h3>
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col" class="tm-text-gray-dark" >Quantity</th>
-                <th scope="col" class="tm-text-gray-dark" >Ingredient Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let ingredient of ingredients" >
-                <td>  <p> {{ingredient.amount}} </p></td>
-                <td>  <p> {{ingredient.description}}. </p></td>
-              </tr>
-            </tbody>
-          </table>
-          </div>
-        <div>
-          <h3 class="tm-text-gray-dark mb-3">Comments: </h3>
-          <p>{{recipe.comments}}</p>
-        </div>
+
       </div>
     </div>
   </div>
-  <div class="row mb-4">
-    <h2 class="col-12 tm-text-primary">
-      Leave a comment
-    </h2>
-    <h2 class="col-12 tm-text-primary">
-      <a routerLink="/recipe"  style="color: #009999;  " >Go back to all recipes  </a>
-    </h2>
-  </div>
-  <div class="row mb-3 tm-gallery">
+
+  <!-- instructions  -->
+  <div class="row tm-mb-50">
+    <div class="col-md-6 col-12">
+      <div class="tm-about-2-col">
+        <h2 class="tm-text-primary mb-4">
+          Instructions
+        </h2>
+        <p class="mb-4">
+          {{recipe.instructions}}</p>
+      </div>
+    </div>
+    <!-- ingredients  -->
+    <div class="col-md-6 col-12">
+      <div class="tm-about-2-col">
+        <h2 class="tm-text-primary mb-4">
+          Ingredients
+        </h2>
+        <p class="mb-4" *ngFor="let ingredient of recipe.ingredients">
+          {{ingredient}} </p>
+      </div>
+    </div>
+
+
   </div> <!-- row -->
+
 </div> <!-- container-fluid, tm-container-content -->
+
+<!-- footer for comments-->
+
+<app-recipe-review></app-recipe-review>

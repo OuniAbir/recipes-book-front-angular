@@ -1,20 +1,24 @@
-import { Ingredient } from "./ingredient";
-import { RecipeCategory } from "./recipe-category";
 
 export class Recipe {
-
-  id : number ;
-  name : String ;
-  source : String;
-  preptime:number ;
-  cooktime:number ;
+  id : number;
+  calories: number ;
+  carbs: number ;
+  categoryName : string ;
+  cooktime: number ;
+  fat: number ;
+  fiber: number ;
+  imageUrl : string ;
+  ingredients : string[];
+  instructions: string;
+  name : string ;
+  preptime : number ;
+  protein: number ;
+  satfat : number ;
   servings : number ;
-  calories : number ;
-  comments: String ;
-  instructions: String ;
-  difficulty: String ;
-  imageUrl: String ;
-  category : RecipeCategory ;
-  ingredients : Ingredient[] ;
+  source : string ;
+  sugar : number ;
+  userName: number ;
+  voteCount: number ;
+  waittime : number ;
 
 }

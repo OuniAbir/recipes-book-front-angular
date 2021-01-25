@@ -1,8 +1,8 @@
 <div class="container-fluid tm-container-content tm-mt-60">
   <div class="row mb-4">
-      <h2 class="col-6 tm-text-primary">
-          Latest Photos
-      </h2>
+          <div class="flex-grow-1 float-right">
+      <a routerLink="/create-recipe" class="float-right signup mr-2">Create new recipe</a>
+    </div>
   </div>
 
 <div class="row ">
@@ -19,7 +19,7 @@
 
                   <div class="d-flex justify-content-between tm-text-gray">
                    <span >{{ recipe.name}}</span>
-                  <span class="tm-text-gray-light"> Calories :  {{recipe.calories}}</span>
+                  <span class="tm-text-gray-light"> votes :  {{recipe.voteCount}}</span>
                 </div>
 
         </div>
