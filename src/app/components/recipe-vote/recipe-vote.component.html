@@ -1,0 +1,16 @@
+
+
+<div class="  pb-3   container-fluid tm-container-small">
+
+  <div class="flex-grow-1 float-right row ">
+    <div class="p-2 votecount mr-3">
+      <span class="tm-text-gray-dark  mr-3"> Total Votes:{{this.voteProps.voteCount}} </span><span class="tm-text-primary  mr-3"> </span>
+    </div>
+    <!-- upvote = true means that's the last type of vote i've submitted -->
+    <button  type="submit" class="Vote float-right mr-3 " (click)="upvotePost()" [style.background-color]="this.voteProps.upvote ?  'grey'  :  '#009999'" > <i class="fa fa-thumbs-up" aria-hidden="true"></i>  Upvote </button>
+    <button  type="submit" class="Vote float-right" (click)="downvotePost()"  [style.background-color]="this.voteProps.downvote ?  'grey' : 'red' " ><i class="fa fa-thumbs-down" aria-hidden="true"> </i>  Downvote </button>
+
+
+  </div>
+
+</div>

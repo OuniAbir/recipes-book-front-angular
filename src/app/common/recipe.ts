@@ -21,4 +21,8 @@ export class Recipe {
   voteCount: number ;
   waittime : number ;
 
+  /* for vote */
+  upVote: boolean;
+  downVote: boolean;
+  commentCount : number;
 }
