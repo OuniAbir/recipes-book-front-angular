@@ -5,6 +5,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgxWebstorageModule } from "ngx-webstorage";
 import { ToastrModule } from "ngx-toastr";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { CategoryMenuComponent } from './components/category-menu/category-menu.component';
@@ -20,6 +21,7 @@ import { TokenInterceptorService } from "./services/token-interceptor.service";
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { RecipeReviewComponent } from './components/recipe-review/recipe-review.component';
 import { CommentService } from './services/comment.service';
+import { RecipeVoteComponent } from './components/recipe-vote/recipe-vote.component';
 
 const routes: Routes = [
   { path: 'sign-up', component: SignupComponent },
@@ -44,6 +46,7 @@ const routes: Routes = [
     SignupComponent,
     LoginComponent,
     RecipeReviewComponent,
+    RecipeVoteComponent,
 
   ],
   imports: [
@@ -55,7 +58,8 @@ const routes: Routes = [
     NgxWebstorageModule.forRoot(),
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    EditorModule
+    EditorModule,
+    NgbModule
   ],
   providers: [
     RecipeService,
