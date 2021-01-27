@@ -22,11 +22,12 @@ import { EditorModule } from '@tinymce/tinymce-angular';
 import { RecipeReviewComponent } from './components/recipe-review/recipe-review.component';
 import { CommentService } from './services/comment.service';
 import { RecipeVoteComponent } from './components/recipe-vote/recipe-vote.component';
+import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
   { path: 'sign-up', component: SignupComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'recipe/:id', component: RecipeDetailComponent },
+  { path: 'recipe/:id', component: RecipeDetailComponent, canActivate : [AuthGuard] },
   { path: 'category/:id', component: RecipeListComponent },
   { path: 'catgeory', component: RecipeListComponent },
   { path: 'recipes', component: RecipeListComponent },
