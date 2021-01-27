@@ -8,7 +8,7 @@
     <div class="col-xl-6 col-lg-7 col-md-6 col-sm-12">
       <img src="{{recipe.imageUrl}}" style="width: 400px; height: 300px;" alt="Image" >
     </div>
-    <div class="col-xl-4 col-lg-5 col-md-6 col-sm-12">
+    <div class="col-xl-6 col-lg-5 col-md-6 col-sm-12">
       <div class="tm-bg-gray tm-video-details">
         <p class="mb-4">
           Source : <a href="{{recipe.source}}" class="tm-text-primary" target="_parent"
@@ -83,6 +83,21 @@
 
 </div> <!-- container-fluid, tm-container-content -->
 
+
 <!-- footer for comments-->
 
-<app-recipe-review></app-recipe-review>
+
+<footer class="tm-bg-gray pt-5 pb-3 tm-text-gray tm-footer">
+  <div class="container-fluid tm-container-small">
+
+<app-recipe-vote [voteProps]="voteProps" ></app-recipe-vote>
+    <!-- Reviews  -->
+
+<app-recipe-review [commentCount]="commentCount"></app-recipe-review>
+
+<!-- end of reviews  -->
+
+      </div>
+
+</footer>
+

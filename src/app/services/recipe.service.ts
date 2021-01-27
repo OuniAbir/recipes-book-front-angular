@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Recipe } from '../common/recipe';
 
 
 @Injectable({
@@ -32,9 +33,9 @@ export class RecipeService {
     return this.httpClient.get(`${this.baseUrl}/recipes/by-name/${keyword}`);
   }
 
-  getRecipeById(theRecipeId: number): Observable<any> {
+  getRecipeById(theRecipeId: number): Observable<Recipe> {
     console.log(`${this.baseUrl}/recipes/${theRecipeId}`);
-    return this.httpClient.get(`${this.baseUrl}/recipes/${theRecipeId}`);
+    return this.httpClient.get<Recipe>(`${this.baseUrl}/recipes/${theRecipeId}`);
   }
 
 }

@@ -11,11 +11,16 @@ import { RecipeService } from 'src/app/services/recipe.service';
 export class RecipeDetailComponent implements OnInit {
 
   recipe: Recipe = new Recipe();
+  voteProps = { voteCount : 0, upvote : false , downvote: false };
+  commentCount : number ;
+
   constructor( private router : ActivatedRoute,
     private recipeService : RecipeService) { }
 
   ngOnInit(): void {
     this.getRecipeDetails();
+    this.commentCount = this.recipe.commentCount;
+
   }
 
 
@@ -24,7 +29,8 @@ export class RecipeDetailComponent implements OnInit {
     this.recipeService.getRecipeById(theRecipeId).subscribe(
       data => {
         this.recipe =data ;
-      }
+        this.voteProps = {voteCount : data.voteCount, upvote :data.upVote,downvote: data.downVote  };
+       }
     )
   }
 
