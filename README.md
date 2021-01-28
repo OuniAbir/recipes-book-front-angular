@@ -29,30 +29,45 @@ You should have the following items already installed
 ## Application pages
 
 1- Start Page :
-![Start Page ] (app-screenShots\startPage.png)
+![Start Page ] (app-screenShots/startPage.png)
+
 
 2- Login Page  :
-![Login Page ] (app-screenShots\LoginPage.PNG)
+
+![Login Page ] (app-screenShots/LoginPage.PNG)
+
 
 3- Sign Up page :
 
-![Sign Up] (app-screenShots\signUp.PNG)
+
+![Sign Up] (app-screenShots/signUp.PNG)
+
 
 4- Recipe Details only for loggedin user :
-![Recipe detail ] (app-screenShots\recipeDetails.PNG)
+
+
+![Recipe detail ] (app-screenShots/recipeDetails.PNG)
+
 
 5- recipe review for loggedin user: 
 
-![review ] (app-screenShots\review.PNG)
+
+![review ] (app-screenShots/review.PNG)
 
 6- searche by Name :
-![search by name] (app-screenShots\search.PNG)
+
+![search by name] (app-screenShots/search.PNG)
+
 
 7- when u are logged in :
 
-![ logged in] (app-screenShots\logged.PNG)
+
+![ logged in] (app-screenShots/logged.PNG)
+
+
 
 
 8- when your not logged in :
 
-![ not logged in ] (app-screenShots\loggout.PNG)
+
+![ not logged in ] (app-screenShots/loggout.PNG)
