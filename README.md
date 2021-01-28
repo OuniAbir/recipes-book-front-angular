@@ -1,9 +1,17 @@
 # Recipes Book application
-Recipes Book application built using Spring Boot, Spring Security with JPA Authentication, Spring Data JPA with MySQL -  You can find the frontend source code here : https://github.com/OuniAbir/recipe-book-back-spring
+Recipes Book application built using Spring Boot v2.4, Spring Security with JPA Authentication, Spring Data JPA with MySQL -  You can find the backend source code here : https://github.com/OuniAbir/recipe-book-back-spring
 
-The frontend is built using Angular.
+The frontend is built using Angular v11.
 
-The Application Link : currently still Working on the Deploy 
+# Deploy 
+
+The Application Deploy Link : currently still Working on the Deploy  
+
+Link to code : 
+
+Frontend: https://github.com/OuniAbir/recipes-book-front-angular/tree/master 
+Backend: https://github.com/OuniAbir/recipe-book-back-spring/tree/master
+
 
 ## Java Development Environment
 
@@ -17,7 +25,9 @@ You should have the following items already installed
 
 1- You should have MySQL Database and MySQL Workbench instaled.
 
+
 ## Usage 
+
 
 1- Download the backend and run it on the http://localhost:8080
 
