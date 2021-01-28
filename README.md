@@ -29,40 +29,40 @@ You should have the following items already installed
 ## Application pages
 
 1- Start Page :
-![Start Page ] (app-screenShots/startPage.png)
+![Start Page ] (https://github.com/OuniAbir/recipes-book-front-angular/blob/main/app-screenShots/startPage.png)
 
 
 2- Login Page  :
 
-![Login Page ] (app-screenShots/LoginPage.PNG)
+![Login Page ] (https://github.com/OuniAbir/recipes-book-front-angular/blob/main/app-screenShots/LoginPage.PNG)
 
 
 3- Sign Up page :
 
 
-![Sign Up] (app-screenShots/signUp.PNG)
+![Sign Up] (https://github.com/OuniAbir/recipes-book-front-angular/blob/main/app-screenShots/signUp.PNG)
 
 
 4- Recipe Details only for loggedin user :
 
 
-![Recipe detail ] (app-screenShots/recipeDetails.PNG)
+![Recipe detail ] (https://github.com/OuniAbir/recipes-book-front-angular/blob/main/app-screenShots/recipeDetails.PNG)
 
 
 5- recipe review for loggedin user: 
 
 
-![review ] (app-screenShots/review.PNG)
+![review ] (https://github.com/OuniAbir/recipes-book-front-angular/blob/main/app-screenShots/review.PNG)
 
 6- searche by Name :
 
-![search by name] (app-screenShots/search.PNG)
+![search by name] (https://github.com/OuniAbir/recipes-book-front-angular/blob/main/app-screenShots/search.PNG)
 
 
 7- when u are logged in :
 
 
-![ logged in] (app-screenShots/logged.PNG)
+![ logged in] (https://github.com/OuniAbir/recipes-book-front-angular/blob/main/app-screenShots/logged.PNG)
 
 
 
@@ -70,4 +70,4 @@ You should have the following items already installed
 8- when your not logged in :
 
 
-![ not logged in ] (app-screenShots/loggout.PNG)
+![ not logged in ] (https://github.com/OuniAbir/recipes-book-front-angular/blob/main/app-screenShots/loggout.PNG)
