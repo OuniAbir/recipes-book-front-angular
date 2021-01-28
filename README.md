@@ -1,27 +1,58 @@
-# RecipeBookFrontAngular
+# Recipes Book application
+Recipes Book application built using Spring Boot, Spring Security with JPA Authentication, Spring Data JPA with MySQL -  You can find the frontend source code here : https://github.com/OuniAbir/recipe-book-back-spring
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.7.
+The frontend is built using Angular.
 
-## Development server
+The Application Link : currently still Working on the Deploy 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Java Development Environment
 
-## Code scaffolding
+You should have the following items already installed 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+	-JDK
+	-Maven
+	
+## DataBase 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+1- You should have MySQL Database and MySQL Workbench instaled.
 
-## Running unit tests
+## Usage 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1- Download the backend and run it on the http://localhost:8080
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+2- Download the Frontend and run it using : ng serve --open, the application will be opened on the link : http://localhost:4200
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Application pages
+
+1- Start Page :
+![Start Page ] (app-screenShots\startPage.png)
+
+2- Login Page  :
+![Login Page ] (app-screenShots\LoginPage.PNG)
+
+3- Sign Up page :
+
+![Sign Up] (app-screenShots\signUp.PNG)
+
+4- Recipe Details only for loggedin user :
+![Recipe detail ] (app-screenShots\recipeDetails.PNG)
+
+5- recipe review for loggedin user: 
+
+![review ] (app-screenShots\review.PNG)
+
+6- searche by Name :
+![search by name] (app-screenShots\search.PNG)
+
+7- when u are logged in :
+
+![ logged in] (app-screenShots\logged.PNG)
+
+
+8- when your not logged in :
+
+![ not logged in ] (app-screenShots\loggout.PNG)
