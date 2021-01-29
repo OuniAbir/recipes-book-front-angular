@@ -1,11 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, throwError, BehaviorSubject, Subject } from 'rxjs';
+import { Observable, throwError, BehaviorSubject, Subject, iif } from 'rxjs';
 import { SignupRequestPayload } from "../auth/signup/signup-request-payload";
 import { LoginRequestPayload } from "../auth/login/login-request-payload";
 import { LoginResponse } from '../auth/login/login-response';
 import { map, tap } from 'rxjs/operators';
 import { LocalStorageService } from "ngx-webstorage";
+import { environment } from 'src/environments/environment';
 
 
 
@@ -19,19 +20,19 @@ export class AuthService {
   loggedIn: Subject<boolean> = new BehaviorSubject<boolean>(false); /* use behavior to hold the value to be sent VS subject desn't hold a value*/
   username: Subject<string> = new BehaviorSubject<string>(null);
 
-  private baseUrl = "http://localhost:8080/api/auth/";
+  private baseUrl = environment.baseUrl ;
   constructor(private HttpClient: HttpClient,
     private localStorageService: LocalStorageService) { }
 
   signup(SignupRequestPayload: SignupRequestPayload): Observable<any> {
-    return this.HttpClient.post(`${this.baseUrl}signup`, SignupRequestPayload, { responseType: 'text' });
+    return this.HttpClient.post(`${this.baseUrl}api/auth/signup`, SignupRequestPayload, { responseType: 'text' });
 
   }
 
   login(loginRequestPayload: LoginRequestPayload): Observable<boolean> {
     console.log();
 
-    return this.HttpClient.post<LoginResponse>(`${this.baseUrl}login`, loginRequestPayload).pipe(
+    return this.HttpClient.post<LoginResponse>(`${this.baseUrl}api/auth/login`, loginRequestPayload).pipe(
       map((
         data => {
           /* login success, store login response in local storage */
@@ -52,7 +53,12 @@ export class AuthService {
   getauthenticationToken() {
     const now = new Date();
     console.log(` ${now.toJSON()}  +   ${this.getexpiresAt()}`);
-    if (now.toJSON() > this.getexpiresAt()) {
+
+    if (this.getexpiresAt() == null) {
+      /* not logged in */
+      console.log(" getauthenticationToken : JWT is null ");
+      return null;
+    }else if(now.toJSON() > this.getexpiresAt()) {
       console.log(" getauthenticationToken : JWT expires ");
       return null;
 
@@ -83,8 +89,8 @@ export class AuthService {
       username: this.getusername(),
     }
 
-    console.log(`refreshToken  : ${this.baseUrl}refresh/token , ${refreshTokenPayload}`);
-    return this.HttpClient.post<LoginResponse>(`${this.baseUrl}refresh/token`, refreshTokenPayload).pipe(
+    console.log(`refreshToken  : ${this.baseUrl}api/auth/refresh/token , ${refreshTokenPayload}`);
+    return this.HttpClient.post<LoginResponse>(`${this.baseUrl}api/auth/refresh/token`, refreshTokenPayload).pipe(
       /* new JWT , expire date , savee them to the local storage */
       /*  tap : return an Observable that is identical to the source*/
       tap(
@@ -103,7 +109,7 @@ export class AuthService {
       username: this.getusername()
     };
 
-    this.HttpClient.post(`${this.baseUrl}logout`, LogoutRequest, { responseType: 'text' }).subscribe(
+    this.HttpClient.post(`${this.baseUrl}api/auth/logout`, LogoutRequest, { responseType: 'text' }).subscribe(
       success => {
         console.log(success);
         this.loggedIn.next(false);

@@ -39,25 +39,36 @@ export class TokenInterceptorService implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     /* first get the JWt from header */
     const jwtToken = this.authService.getauthenticationToken();
+    const Req =  req.clone({
+      setHeaders: {
+        'Content-Type' : 'application/json; charset=utf-8',
+        'Accept'       : 'application/json',
+        'Access-Control-Allow-Origin':'*',
+      },
+    });
+
+    console.log('intercept ', Req);
 
     if (jwtToken)  /* JWt is valid , just add to the header */
     {
        console.log('Intercepted HTTP call tocken IS VALID  ');
-        return next.handle(this.addTokenToAuthHeader(req , jwtToken));
+        return next.handle(this.addTokenToAuthHeader(Req , jwtToken));
     }
     else {
     /* jwt not valid,  next interceptor role to check the type of error we r getting
       if error of type 403 access Denied, so we need to make front make a call to get new JWT
     */
-     console.log('Intercepted HTTP call tocken NOT VALID !!!');
+     console.log('Intercepted HTTP call tocken is null or NOT VALID !!!');
 
-    return next.handle(req)
+    return next.handle(Req)
     .pipe(catchError( err => {
+      console.log("Intercepteur error :", err);
+
       if (err instanceof HttpErrorResponse && err.status === 403 ) {
         console.log('Intercepted HTTP call tocken NOT VALID and 403 ERROR !!!');
         /* front make a call to get new JWT*/
 
-        return this.handleAuthAccessDeniedErrors(req, next) ;
+        return this.handleAuthAccessDeniedErrors(Req, next) ;
 
       } else {
         /* error is not of type Access Denied */
@@ -98,6 +109,8 @@ export class TokenInterceptorService implements HttpInterceptor {
         'Content-Type' : 'application/json; charset=utf-8',
         'Accept'       : 'application/json',
         'Authorization': `Bearer ${jwt}`,
+        'Access-Control-Allow-Origin':'*',
+
       },
     });
 

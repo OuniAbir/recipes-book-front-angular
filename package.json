@@ -13,10 +13,10 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~10.2.4",
-    "@angular/common": "~10.2.4",
     "@angular/cli": "~10.2.1",
-    "@angular/compiler-cli": "~10.2.4",
+    "@angular/common": "~10.2.4",
     "@angular/compiler": "~10.2.4",
+    "@angular/compiler-cli": "~10.2.4",
     "@angular/core": "~10.2.4",
     "@angular/forms": "~10.2.4",
     "@angular/platform-browser": "~10.2.4",
@@ -25,12 +25,13 @@
     "@fortawesome/fontawesome-free": "^5.15.2",
     "@ng-bootstrap/ng-bootstrap": "^9.0.2",
     "@tinymce/tinymce-angular": "^4.2.0",
-    "typescript": "~4.0.2",
     "bootstrap": "^4.5.3",
+    "cors": "^2.8.5",
     "ngx-toastr": "^13.2.0",
     "ngx-webstorage": "^7.0.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
+    "typescript": "~4.0.2",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
@@ -53,7 +54,6 @@
     "tslint": "~6.1.0",
     "typescript": "~4.0.2"
   },
-
   "engines": {
     "node": "14.15.4",
     "npm": "6.14.11"
