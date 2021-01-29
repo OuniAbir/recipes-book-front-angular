@@ -1,11 +1,24 @@
 # Recipes Book application
 Recipes Book application built using Spring Boot v2.4, Spring Security with JPA Authentication, Spring Data JPA with MySQL -  You can find the backend source code here : https://github.com/OuniAbir/recipe-book-back-spring
 
-The frontend is built using Angular v11.
+The frontend is built using Angular v10.
+
+
+main branch : for dev.
+
+
+master branch : for deploy on heroku.
 
 # Deploy 
 
-The Application Deploy Link : currently still Working on the Deploy  
+The Application is deployed on Heroku - Deploy Link : https://recipe-book-front-angular.herokuapp.com/
+
+For Login you can use those credentials :
+
+name : Guest
+password : Guest
+
+
 
 Link to code : 
 
@@ -42,15 +55,22 @@ You should have the following items already installed
 ![Start Page ](https://github.com/OuniAbir/recipes-book-front-angular/blob/main/app-screenShots/startPage.png)
 
 
-2- Login Page  :
-
-![Login Page ](https://github.com/OuniAbir/recipes-book-front-angular/blob/main/app-screenShots/LoginPage.PNG)
-
-
-3- Sign Up page :
+2- Sign Up page :
 
 
 ![Sign Up](https://github.com/OuniAbir/recipes-book-front-angular/blob/main/app-screenShots/signUp.PNG)
+
+
+After you enter your information, you will be redirected to login page and receive mail for activation link.
+
+![SignUpSucces](https://github.com/OuniAbir/recipes-book-front-angular/blob/main/app-screenShots/signUpSucce.PNG)
+
+
+
+3- Login Page  :
+
+![Login Page ](https://github.com/OuniAbir/recipes-book-front-angular/blob/main/app-screenShots/LoginPage.PNG)
+
 
 
 4- Recipe Details only for loggedin user :
@@ -64,6 +84,14 @@ You should have the following items already installed
 
 ![review ](https://github.com/OuniAbir/recipes-book-front-angular/blob/main/app-screenShots/review.PNG)
 
+
+
+The owner of recipe will receive a notification mail for interactions on his recipe.
+
+
+![mail ](https://github.com/OuniAbir/recipes-book-front-angular/blob/main/app-screenShots/NotifEmail.PNG)
+
+
 6- searche by Name :
 
 ![search by name](https://github.com/OuniAbir/recipes-book-front-angular/blob/main/app-screenShots/search.PNG)
@@ -73,7 +101,6 @@ You should have the following items already installed
 
 
 ![ logged in](https://github.com/OuniAbir/recipes-book-front-angular/blob/main/app-screenShots/logged.PNG)
-
 
 
 

@@ -52,7 +52,12 @@ export class AuthService {
   getauthenticationToken() {
     const now = new Date();
     console.log(` ${now.toJSON()}  +   ${this.getexpiresAt()}`);
-    if (now.toJSON() > this.getexpiresAt()) {
+
+    if (this.getexpiresAt() == null) {
+      /* not logged in */
+      console.log(" getauthenticationToken : JWT is null ");
+      return null;
+    }else if(now.toJSON() > this.getexpiresAt()) {
       console.log(" getauthenticationToken : JWT expires ");
       return null;
 
