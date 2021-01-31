@@ -4,26 +4,27 @@ Recipes Book application built using Spring Boot v2.4, Spring Security with JPA 
 The frontend is built using Angular v10.
 
 
-main branch : for dev.
+*main branch : for dev.
 
+*master branch : for deploy on heroku.
 
-master branch : for deploy on heroku.
 
 # Deploy 
 
 The Application is deployed on Heroku - Deploy Link : https://recipe-book-front-angular.herokuapp.com/
 
-For Login you can use those credentials :
+For Login you can use these credentials :
 
-name : Guest
-password : Guest
 
+	-name : Guest
+	-password : Guest
 
 
 Link to code : 
 
-Frontend: https://github.com/OuniAbir/recipes-book-front-angular/tree/master 
-Backend: https://github.com/OuniAbir/recipe-book-back-spring/tree/master
+*Frontend: https://github.com/OuniAbir/recipes-book-front-angular/tree/master 
+
+*Backend: https://github.com/OuniAbir/recipe-book-back-spring/tree/master
 
 
 ## Java Development Environment
